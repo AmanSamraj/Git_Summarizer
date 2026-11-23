@@ -1,6 +1,6 @@
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
-
+import Repositories from "./pages/Repositories";
 import DashboardLayout from "./components/layouts/DashboardLayout";
 import Dashboard from "./pages/Dashboard";
 
@@ -38,16 +38,6 @@ export default function App() {
           <Route index element={<Navigate to="/dashboard" replace />} />
 
           <Route path="/dashboard" element={<Dashboard />} />
-
-          <Route
-            path="/repositories"
-            element={
-              <PlaceholderPage
-                title="Repositories"
-                description="Connect and analyze GitHub repositories."
-              />
-            }
-          />
 
           <Route
             path="/commits"
@@ -98,6 +88,10 @@ export default function App() {
               />
             }
           />
+
+          <Route 
+              path="/repositories" 
+              element={<Repositories />} />
 
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Route>
